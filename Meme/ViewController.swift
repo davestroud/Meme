@@ -108,6 +108,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+
     }
     
     // launches the image picker and sets delegate for the album
@@ -127,8 +128,12 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
     }
     
-    @IBAction func shareAnImage(sender: AnyObject) {
-        
+    
+    @IBAction func shareAnImage(sender: AnyObject) { // sharing the meme image
+        let newMeme = save()
+        let memedImage = newMeme.memedImage
+        let nextController = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil) // do we need optional right here? - on memedImage
+        presentViewController(nextController, animated: true, completion: nil)
     }
     
     @IBAction func cancelAnImage(sender: UIBarButtonItem) {
@@ -143,7 +148,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true, completion: nil) // do we need to declare self right here?
         }
     }
 }
