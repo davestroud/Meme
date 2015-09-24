@@ -13,11 +13,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
 
     @IBOutlet weak var imagePickerView: UIImageView!
-    @IBOutlet weak var pickAnImageFromCamera: UIBarButtonItem! // looks like i have two camera buttons
-    @IBOutlet weak var cameraButton: UIBarButtonItem! //  looks like i have two camera buttons
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextButton: UITextField!
     @IBOutlet weak var bottomTextButton: UITextField!
-    @IBOutlet weak var topToolBar: UIToolbar! // i need a bottom tool bar button.  i can replace it with one of the two camera buttons i have
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     

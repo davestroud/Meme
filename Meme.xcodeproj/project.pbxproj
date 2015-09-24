@@ -13,7 +13,7 @@
 		8B710EB61BAF4BB500C37412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B710EB41BAF4BB500C37412 /* LaunchScreen.storyboard */; };
 		8B710EC11BAF4BB500C37412 /* MemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B710EC01BAF4BB500C37412 /* MemeTests.swift */; };
 		8B710ECC1BAF4BB500C37412 /* MemeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B710ECB1BAF4BB500C37412 /* MemeUITests.swift */; };
-		8B802A2F1BB3147600936758 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B802A2E1BB3147600936758 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8B802A2F1BB3147600936758 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B802A2E1BB3147600936758 /* ViewController.swift */; };
 		8BC2A0CD1BB19D4F002F1455 /* Meme_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2A0CC1BB19D4F002F1455 /* Meme_struct.swift */; };
 /* End PBXBuildFile section */
 
@@ -351,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
