@@ -52,8 +52,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // Set font style and color with textAttributes
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -61,11 +61,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         NSStrokeWidthAttributeName: NSNumber(float: -3.0),
         ]
         
-        setupTextField(topTextButton, text: " TOP ", delegate: self, attributes:
+        // Setting the defaultTextAttributes
+        setupTextField(topTextButton, text: " TOP ", delegate: self, attributes:    
             memeTextAttributes, alignment: NSTextAlignment.Center)
         setupTextField(bottomTextButton, text: "BOTTOM ", delegate: self, attributes:
             memeTextAttributes, alignment: NSTextAlignment.Center)
-    
     }
     
     func setupTextField (textField: UITextField, text: String, delegate: UITextFieldDelegate,
@@ -81,6 +81,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         // share and cancel button have not been disabled until the image has been selected.  should i do this?
         self.subscribeToKeyboardNotifications() // sign up to be notified when keyboard appears.  do i have to include self right here?
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        // appears to be new code on the udacity site
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -147,8 +150,12 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
-            self.dismissViewControllerAnimated(true, completion: nil)
         }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(imagePicker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
