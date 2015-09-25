@@ -24,28 +24,12 @@
                                 <items>
                                     <barButtonItem title="Album" id="bbW-ZM-4fi">
                                         <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="GEa-MF-Tpc"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="vam-DI-8GY"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="camera" id="hJp-76-y61">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="ac0-2N-sjh"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-7C-E1P">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem systemItem="action" id="Kyp-5x-c8g">
-                                        <connections>
-                                            <action selector="shareAnImage:" destination="BYZ-38-t0r" id="wl8-aQ-3h2"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Cancel" id="uzb-4b-qmD">
-                                        <connections>
-                                            <action selector="cancelAnImage:" destination="BYZ-38-t0r" id="VdY-Zm-bXT"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -67,54 +51,61 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-7C-E1P">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="Kyp-5x-c8g">
+                                        <connections>
+                                            <action selector="shareAnImage:" destination="BYZ-38-t0r" id="wl8-aQ-3h2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Cancel" id="uzb-4b-qmD">
+                                        <connections>
+                                            <action selector="cancelAnImage:" destination="BYZ-38-t0r" id="VdY-Zm-bXT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3dw-e4-yJG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="0JZ-Ad-Frm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3dw-e4-yJG" secondAttribute="trailing" constant="10" id="2Jq-XV-GaR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wzc-2B-1do" secondAttribute="trailing" constant="-20" id="2jX-gp-ufk"/>
                             <constraint firstItem="n9d-Jg-db5" firstAttribute="top" secondItem="hVs-SL-lK9" secondAttribute="bottom" constant="256" id="4k6-BZ-4fA"/>
                             <constraint firstItem="Wzc-2B-1do" firstAttribute="top" secondItem="n9d-Jg-db5" secondAttribute="bottom" constant="88" id="65e-7y-X6I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wzc-2B-1do" secondAttribute="trailing" constant="-20" id="C4d-kG-kTJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3dw-e4-yJG" secondAttribute="trailing" constant="-20" id="Ekb-bj-qFS"/>
                             <constraint firstItem="n9d-Jg-db5" firstAttribute="top" secondItem="hVs-SL-lK9" secondAttribute="bottom" constant="256" id="M5b-pq-zTY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hVs-SL-lK9" secondAttribute="trailing" constant="55" id="Mc6-OM-ZYk"/>
                             <constraint firstItem="3dw-e4-yJG" firstAttribute="top" secondItem="TPN-7C-E1P" secondAttribute="bottom" id="Pd7-7O-5d1"/>
                             <constraint firstItem="hVs-SL-lK9" firstAttribute="top" secondItem="TPN-7C-E1P" secondAttribute="bottom" constant="64" id="Tat-Tn-Unm"/>
-                            <constraint firstItem="3dw-e4-yJG" firstAttribute="top" secondItem="TPN-7C-E1P" secondAttribute="bottom" constant="14" id="X4x-h7-tnm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TPN-7C-E1P" secondAttribute="trailing" constant="-20" id="aSY-0O-nAW"/>
                             <constraint firstItem="3dw-e4-yJG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="br1-NS-bno"/>
-                            <constraint firstItem="3dw-e4-yJG" firstAttribute="top" secondItem="TPN-7C-E1P" secondAttribute="bottom" constant="14" id="ca7-lw-vzI"/>
                             <constraint firstItem="TPN-7C-E1P" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="goS-Ci-AK2"/>
                             <constraint firstItem="TPN-7C-E1P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iYv-xQ-5OZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="n9d-Jg-db5" secondAttribute="trailing" constant="55" id="mzy-Rz-Yeu"/>
                             <constraint firstItem="Wzc-2B-1do" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nzz-RP-gCh"/>
                             <constraint firstItem="n9d-Jg-db5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="o8M-S2-PGg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wzc-2B-1do" secondAttribute="bottom" id="ptC-Rk-UGb"/>
-                            <constraint firstItem="Wzc-2B-1do" firstAttribute="top" secondItem="3dw-e4-yJG" secondAttribute="bottom" constant="16" id="q4X-jp-qhm"/>
                             <constraint firstItem="hVs-SL-lK9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="sHY-8K-Gs8"/>
                             <constraint firstItem="Wzc-2B-1do" firstAttribute="top" secondItem="3dw-e4-yJG" secondAttribute="bottom" id="vSP-8C-6TF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Wzc-2B-1do"/>
-                                <exclude reference="TPN-7C-E1P"/>
                                 <exclude reference="3dw-e4-yJG"/>
                                 <exclude reference="hVs-SL-lK9"/>
                                 <exclude reference="n9d-Jg-db5"/>
+                                <exclude reference="TPN-7C-E1P"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="aSY-0O-nAW"/>
                                 <exclude reference="goS-Ci-AK2"/>
                                 <exclude reference="iYv-xQ-5OZ"/>
-                                <exclude reference="0JZ-Ad-Frm"/>
                                 <exclude reference="2Jq-XV-GaR"/>
-                                <exclude reference="Ekb-bj-qFS"/>
                                 <exclude reference="Pd7-7O-5d1"/>
-                                <exclude reference="X4x-h7-tnm"/>
                                 <exclude reference="br1-NS-bno"/>
-                                <exclude reference="ca7-lw-vzI"/>
                                 <exclude reference="Mc6-OM-ZYk"/>
                                 <exclude reference="Tat-Tn-Unm"/>
                                 <exclude reference="sHY-8K-Gs8"/>
@@ -126,7 +117,6 @@
                                 <exclude reference="65e-7y-X6I"/>
                                 <exclude reference="C4d-kG-kTJ"/>
                                 <exclude reference="nzz-RP-gCh"/>
-                                <exclude reference="q4X-jp-qhm"/>
                                 <exclude reference="vSP-8C-6TF"/>
                                 <exclude reference="ptC-Rk-UGb"/>
                             </mask>
@@ -134,22 +124,18 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Wzc-2B-1do"/>
-                                <include reference="TPN-7C-E1P"/>
                                 <include reference="3dw-e4-yJG"/>
                                 <include reference="hVs-SL-lK9"/>
                                 <include reference="n9d-Jg-db5"/>
+                                <include reference="TPN-7C-E1P"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="aSY-0O-nAW"/>
                                 <include reference="goS-Ci-AK2"/>
                                 <include reference="iYv-xQ-5OZ"/>
-                                <exclude reference="0JZ-Ad-Frm"/>
                                 <include reference="2Jq-XV-GaR"/>
-                                <exclude reference="Ekb-bj-qFS"/>
                                 <include reference="Pd7-7O-5d1"/>
-                                <exclude reference="X4x-h7-tnm"/>
                                 <include reference="br1-NS-bno"/>
-                                <exclude reference="ca7-lw-vzI"/>
                                 <include reference="Mc6-OM-ZYk"/>
                                 <include reference="Tat-Tn-Unm"/>
                                 <include reference="sHY-8K-Gs8"/>
@@ -161,7 +147,6 @@
                                 <include reference="65e-7y-X6I"/>
                                 <include reference="C4d-kG-kTJ"/>
                                 <include reference="nzz-RP-gCh"/>
-                                <exclude reference="q4X-jp-qhm"/>
                                 <include reference="vSP-8C-6TF"/>
                                 <include reference="ptC-Rk-UGb"/>
                             </mask>
@@ -182,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-574.5" y="-82"/>
+            <point key="canvasLocation" x="-949.5" y="-325"/>
         </scene>
     </scenes>
 </document>

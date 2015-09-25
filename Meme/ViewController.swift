@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,  // should i name the vanilla view controller something else?
+class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
     
 
@@ -23,7 +23,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     var meme:UIImage!
 
-    // creates the meme.  Initializes the Meme model object
+    // creates the meme.  Initializes the Meme model object.  Created and works with struct file.
     func save() -> Meme {
         let meme = Meme(topText: topTextButton.text!,
             bottomText: bottomTextButton.text!,
@@ -85,7 +85,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications() // again, is it necesarry for me to declare self right here?
+        self.unsubscribeFromKeyboardNotifications() // do I need to declare self here?
     }
     
     // when the keyboardWillShow notification is received, shift the view frame up
@@ -104,35 +104,34 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:",name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
     }
+    
     // declare function to sign up to be notified when the keyboard disappears
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-
     }
     
-    // launches the image picker and sets delegate for the album
-    @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
+    // Launch the image picker and set the UIImagePickerControllerDelegate:
+    @IBAction func pickAnImage(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        // Specifying sourceType
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(imagePicker, animated: true, completion: nil)
-        
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        // Specifying sourceType
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(imagePicker, animated: true, completion: nil)
-        
     }
-    
-    
-    @IBAction func shareAnImage(sender: AnyObject) { // sharing the meme image
+
+    @IBAction func shareAnImage(sender: AnyObject) {
         let newMeme = save()
         let memedImage = newMeme.memedImage
-        let nextController = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil) // do we need optional right here? - on memedImage
+        let nextController = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil)
         presentViewController(nextController, animated: true, completion: nil)
     }
     
@@ -142,13 +141,13 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         imagePickerView.image = nil
         shareButton.enabled = false
         cancelButton.enabled = false
-}
+    }
   
-    // retrieves the image from the image picker
+    // Retrieve the image from the image picker.  Receive the image from the delegate pattern
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
-            self.dismissViewControllerAnimated(true, completion: nil) // do we need to declare self right here?
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 }
