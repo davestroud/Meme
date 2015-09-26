@@ -27,6 +27,7 @@
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="vam-DI-8GY"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MXg-Qy-bMc"/>
                                     <barButtonItem systemItem="camera" id="hJp-76-y61">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="ac0-2N-sjh"/>
@@ -43,6 +44,7 @@
                                             <action selector="shareAnImage:" destination="BYZ-38-t0r" id="wl8-aQ-3h2"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8oP-Ee-O5n"/>
                                     <barButtonItem title="Cancel" id="uzb-4b-qmD">
                                         <connections>
                                             <action selector="cancelAnImage:" destination="BYZ-38-t0r" id="VdY-Zm-bXT"/>
@@ -167,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1612.5" y="-323"/>
+            <point key="canvasLocation" x="-1777.5" y="-394"/>
         </scene>
     </scenes>
 </document>
