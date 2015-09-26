@@ -25,10 +25,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
 
     // creates the meme.  Initializes the Meme model object.  Created and works with struct file.
     func save() -> Meme {
-        let meme = Meme(topText: topTextButton.text!,
-            bottomText: bottomTextButton.text!,
-            originalImage: imagePickerView.image!,
-            memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextButton.text!, bottomText: bottomTextButton.text, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
         return meme
     }
     
@@ -44,7 +41,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        //  hides toolbar and navbar
+        //  shows toolbar and navbar
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
         return memedImage
@@ -76,25 +73,28 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         textField.textAlignment = alignment
     }
     
+    var memes: [Meme]!
+    // Sign up to be notified when the keyboard appears
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        // share and cancel button have not been disabled until the image has been selected.  should i do this?
-        self.subscribeToKeyboardNotifications() // sign up to be notified when keyboard appears.  do i have to include self right here?
+        // Subscribe to keyboard notifications to allow the view to raise when necessary
+        self.subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        // appears to be new code on the udacity site
-        
-        
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        memes = appDelegate.memes
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications() // do I need to declare self here?
+        // Unsubscribe from keyboard notifications
+        self.unsubscribeFromKeyboardNotifications()
     }
     
     // when the keyboardWillShow notification is received, shift the view frame up
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification) // does it matter if i turn this into an if/else statement and why?
-    } // how would it be different if this was turned into an if/else statement
+        self.view.frame.origin.y -= getKeyboardHeight(notification)
+    }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
