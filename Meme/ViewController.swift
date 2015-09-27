@@ -93,7 +93,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     // when the keyboardWillShow notification is received, shift the view frame up
     func keyboardWillShow(notification: NSNotification) {
+        if bottomTextField.isFirstResponder() {
         view.frame.origin.y = -getKeyboardHeight(notification)
+        }
     }
     
     // When the keyboardWillHide notification is received, shift the view frame down
@@ -110,7 +112,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     // declare function to sign up to be notified when the keyboard appears
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:",name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     // declare function to sign up to be notified when the keyboard disappears
@@ -165,6 +167,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     // Makes the keyboard come back down when user presses return
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        topTextField.resignFirstResponder()
         bottomTextField.resignFirstResponder()
         // Finish implementing the method
         return true
