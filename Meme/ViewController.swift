@@ -96,6 +96,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         view.frame.origin.y = -getKeyboardHeight(notification)
     }
     
+    // When the keyboardWillHide notification is received, shift the view frame down
+    func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y = 0.0
+    }
+    
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue // of CGRect
