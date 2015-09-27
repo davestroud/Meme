@@ -14,8 +14,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var topTextButton: UITextField!
-    @IBOutlet weak var bottomTextButton: UITextField!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -25,7 +25,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
 
     // creates the meme.  Initializes the Meme model object.  Created and works with struct file.
     func save() -> Meme {
-        let meme = Meme(topText: topTextButton.text!, bottomText: bottomTextButton.text, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
         return meme
     }
     
@@ -59,9 +59,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         ]
         
         // Setting the defaultTextAttributes
-        setupTextField(topTextButton, text: " TOP ", delegate: self, attributes:    
+        setupTextField(topTextField, text: " TOP ", delegate: self, attributes:    
             memeTextAttributes, alignment: NSTextAlignment.Center)
-        setupTextField(bottomTextButton, text: "BOTTOM ", delegate: self, attributes:
+        setupTextField(bottomTextField, text: "BOTTOM ", delegate: self, attributes:
             memeTextAttributes, alignment: NSTextAlignment.Center)
     }
     
@@ -78,7 +78,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // Subscribe to keyboard notifications to allow the view to raise when necessary
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
@@ -88,12 +88,12 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         // Unsubscribe from keyboard notifications
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
     
     // when the keyboardWillShow notification is received, shift the view frame up
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -120,7 +120,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         imagePicker.delegate = self
         // Specifying sourceType
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
@@ -128,7 +128,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         imagePicker.delegate = self
         // Specifying sourceType
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func shareAnImage(sender: AnyObject) {
@@ -139,8 +139,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     @IBAction func cancelAnImage(sender: UIBarButtonItem) {
-        topTextButton.text = "Top"
-        bottomTextButton.text = "Bottom"
+        topTextField.text = "Top"
+        bottomTextField.text = "Bottom"
         imagePickerView.image = nil
         shareButton.enabled = false
         cancelButton.enabled = false
@@ -151,7 +151,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(imagePicker: UIImagePickerController) {

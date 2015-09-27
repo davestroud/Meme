@@ -57,13 +57,13 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIB-an-opp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIB-an-opp" userLabel="Top Text Field">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PV4-Fz-aeQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PV4-Fz-aeQ" userLabel="Bottom Text Field">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -102,25 +102,25 @@
                                 <exclude reference="PV4-Fz-aeQ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="aSY-0O-nAW"/>
-                                <exclude reference="goS-Ci-AK2"/>
-                                <exclude reference="iYv-xQ-5OZ"/>
-                                <exclude reference="2Jq-XV-GaR"/>
-                                <exclude reference="Pd7-7O-5d1"/>
-                                <exclude reference="br1-NS-bno"/>
-                                <exclude reference="fDa-8O-SIH"/>
-                                <exclude reference="jrI-C4-Y6o"/>
-                                <exclude reference="lkc-KC-vCr"/>
                                 <exclude reference="1VK-08-3FV"/>
                                 <exclude reference="Cgj-Hs-kWe"/>
                                 <exclude reference="Ee8-Eh-w3V"/>
                                 <exclude reference="fQr-Nn-qAl"/>
+                                <exclude reference="fDa-8O-SIH"/>
+                                <exclude reference="jrI-C4-Y6o"/>
+                                <exclude reference="lkc-KC-vCr"/>
+                                <exclude reference="aSY-0O-nAW"/>
+                                <exclude reference="goS-Ci-AK2"/>
+                                <exclude reference="iYv-xQ-5OZ"/>
                                 <exclude reference="2jX-gp-ufk"/>
                                 <exclude reference="C4d-kG-kTJ"/>
                                 <exclude reference="Gm3-fv-802"/>
                                 <exclude reference="nzz-RP-gCh"/>
                                 <exclude reference="vSP-8C-6TF"/>
                                 <exclude reference="ptC-Rk-UGb"/>
+                                <exclude reference="2Jq-XV-GaR"/>
+                                <exclude reference="Pd7-7O-5d1"/>
+                                <exclude reference="br1-NS-bno"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -132,38 +132,38 @@
                                 <include reference="PV4-Fz-aeQ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="aSY-0O-nAW"/>
-                                <include reference="goS-Ci-AK2"/>
-                                <include reference="iYv-xQ-5OZ"/>
-                                <include reference="2Jq-XV-GaR"/>
-                                <include reference="Pd7-7O-5d1"/>
-                                <include reference="br1-NS-bno"/>
-                                <include reference="fDa-8O-SIH"/>
-                                <include reference="jrI-C4-Y6o"/>
-                                <include reference="lkc-KC-vCr"/>
                                 <include reference="1VK-08-3FV"/>
                                 <include reference="Cgj-Hs-kWe"/>
                                 <include reference="Ee8-Eh-w3V"/>
                                 <include reference="fQr-Nn-qAl"/>
+                                <include reference="fDa-8O-SIH"/>
+                                <include reference="jrI-C4-Y6o"/>
+                                <include reference="lkc-KC-vCr"/>
+                                <include reference="aSY-0O-nAW"/>
+                                <include reference="goS-Ci-AK2"/>
+                                <include reference="iYv-xQ-5OZ"/>
                                 <include reference="2jX-gp-ufk"/>
                                 <include reference="C4d-kG-kTJ"/>
                                 <include reference="Gm3-fv-802"/>
                                 <include reference="nzz-RP-gCh"/>
                                 <include reference="vSP-8C-6TF"/>
                                 <include reference="ptC-Rk-UGb"/>
+                                <include reference="2Jq-XV-GaR"/>
+                                <include reference="Pd7-7O-5d1"/>
+                                <include reference="br1-NS-bno"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bottomTextButton" destination="PV4-Fz-aeQ" id="iFG-Ii-saj"/>
+                        <outlet property="bottomTextField" destination="PV4-Fz-aeQ" id="RAg-69-OKY"/>
                         <outlet property="bottomToolBar" destination="Wzc-2B-1do" id="kRH-n8-Mjv"/>
                         <outlet property="cameraButton" destination="hJp-76-y61" id="mjk-8B-82N"/>
                         <outlet property="cancelButton" destination="uzb-4b-qmD" id="PwT-Mw-v0d"/>
                         <outlet property="imagePickerView" destination="3dw-e4-yJG" id="QcG-Ca-2oC"/>
                         <outlet property="shareButton" destination="Kyp-5x-c8g" id="vfL-p5-gyM"/>
-                        <outlet property="topTextButton" destination="qIB-an-opp" id="yhP-Hk-MUY"/>
+                        <outlet property="topTextField" destination="qIB-an-opp" id="C9C-mI-kxx"/>
                         <outlet property="topToolBar" destination="TPN-7C-E1P" id="hwk-pP-6Iv"/>
                     </connections>
                 </viewController>
