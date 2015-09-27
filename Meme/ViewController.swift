@@ -93,7 +93,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     // when the keyboardWillShow notification is received, shift the view frame up
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = -getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -157,5 +157,13 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func imagePickerControllerDidCancel(imagePicker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // Makes the keyboard come back down when user presses return
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        bottomTextField.resignFirstResponder()
+        // Finish implementing the method
+        return true
+    }
+    
 }
 
